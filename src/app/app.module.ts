@@ -11,6 +11,7 @@ import { DetailUserComponent } from './component/detail-user/detail-user.compone
 import { ListResourcesComponent } from './component/list-resources/list-resources.component';
 import { DetailResourceComponent } from './component/detail-resource/detail-resource.component';
 import { EditUserComponent } from './component/edit-user/edit-user.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { EditUserComponent } from './component/edit-user/edit-user.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

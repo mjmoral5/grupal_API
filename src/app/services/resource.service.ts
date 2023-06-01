@@ -9,21 +9,21 @@ import { Observable } from 'rxjs';
 export class ResourceService {
 
   resources : Array<Resource> = [];
+  /**
+   * Constructor del servicio Resource
+   * @param http Objeto HttpClient para poder hacer las peticiones a la API
+   */
   constructor(private http : HttpClient) {}
 
-  getListResources() : Observable<Resource[]> {
+  /**
+   * Método para obtener los resources de la API
+   * @returns Un objeto Observable mapeado con Resource
+   */
+  getListResources() : Observable<Resource> {
     
-    return this.http.get<Resource[]>("https://reqres.in/api/unknown");
-      // .subscribe(res =>{
-      // let recurso : Resource = res;
-      // let json = JSON.parse(JSON.stringify(recurso));
-
-      // json.data.forEach(element => {
-      //   console.log(element);
-      // });
-
-      // console.log(json.data);
-    };
+    return this.http.get<Resource>("https://reqres.in/api/unknown");
+    
+    }
     
   }
 

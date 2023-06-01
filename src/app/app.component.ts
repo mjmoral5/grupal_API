@@ -9,7 +9,6 @@ import { ResourceService } from './services/resource.service';
 export class AppComponent {
   title = 'grupal_API';
 
-  constructor(private resourceService : ResourceService){
-    resourceService.getListResources();
+  constructor(){
   }
 }

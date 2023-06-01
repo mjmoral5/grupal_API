@@ -1,11 +1,14 @@
-<div class="container border">
- <div class="d-flex flex-column">
+<div class="m-auto w-75 mh-100 p-lg-5 p-3 border ">
+ <div class="d-flex flex-column w-75 m-auto p-lg-5 p-3">
+  <div class="row m-auto">
+  <h1 class="h1">Log in</h1>
+  </div>
   <form class="d-flex flex-column p-2 needs-validation" novalidate>
-    <div class="w-50 col-md-4 py-3 m-auto">
+    <div class="w-50 mw-100  py-3 m-auto">
       <label for="validationCustom01" class="form-label fs-4">Email</label>
       <input type="email" class=" form-control mb-1 p-2" id="validationCustom01" required placeholder="email@email.com">
     </div>
-    <div class="w-50 col-md-4 py-3 m-auto">
+    <div class="w-50 mw-100  py-3 m-auto">
       <div class="mb-3">
         <label for="" class="form-label fs-4">Password</label>
         <input type="password" class=" form-control mb-1 p-2" name="" id="" placeholder="Password1234">
@@ -15,8 +18,8 @@
   <div class="row w-50 m-auto py-2">
     <button class="btn btn-primary mb-3" type="submit">Login</button>
   </div>
-  <div class="row w-10 fs-5 text-center m-auto py-2">
-    <a class="text-decoration-none hover_link p-2 mb-3" [routerLink]="['/register']" rel="noopener noreferrer">¿No tienes cuenta?</a>
+  <div class="row w-25 fs-5 text-center m-auto py-2">
+    <a class="text-decoration-none hover_link p-2 mb-3" [routerLink]="['/register']" rel="noopener noreferrer">Don't have an account?</a>
   </div>
  </div>
 </div>

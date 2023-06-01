@@ -1,0 +1,5 @@
+.hover_link:hover {
+  box-shadow: inset 30rem 0 0 0 #242222;
+  color: white;
+  transition: color .7s ease-in-out, box-shadow .5s ease-in-out;
+}

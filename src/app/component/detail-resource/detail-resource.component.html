@@ -15,13 +15,13 @@
         <div class="card" style="width: 18rem;">
 
             <div class="contenedor-muestra" style="max-width: 18rem;">
-                <div class="card-header">#000000</div>
+                <div class="card-header" >{{r?.color}}</div>
 
                 <div class="card-body">
-                    <h5 class="card-title">Nombre:</h5>
-                    <p class="card-text">Año:</p>
-                    <p class="card-text">Pantone:</p>
-                    <p class="card-text"><a href="#">URL</a></p>
+                    <h5 class="card-title">{{r?.name}}</h5>
+                    <p class="card-text">{{r?.year}}</p>
+                    <p class="card-text">{{r?.pantone_value}}</p>
+                    <p class="card-text"><a href="#">{{r?.color}}</a></p>
                 </div>
             </div>
 

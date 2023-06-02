@@ -8,7 +8,16 @@ import { DetailUserComponent } from './component/detail-user/detail-user.compone
 import { EditUserComponent } from './component/edit-user/edit-user.component';
 import { RegisterComponent } from './component/register/register.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: '', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'resources', component: ListResourcesComponent },
+  { path: 'resource/:id', component: DetailResourceComponent },
+  { path: 'users', component: ListUsersComponent },
+  { path: 'user/:id', component: DetailUserComponent },
+  { path: 'user/edit/:id', component: EditUserComponent }
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

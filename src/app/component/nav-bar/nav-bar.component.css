@@ -1,0 +1,14 @@
+nav{
+    padding: 20px;
+    width: 300px;
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+li {
+    list-style: none;
+}
+
+li:hover {
+    list-style: none;
+}

@@ -1,9 +1,42 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { User } from '../model/user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  constructor() { }
+  private apiUrl: string = "https://reqres.in/api/";
+
+  constructor(private http: HttpClient) { }
+
+  login(user: User): Observable<boolean> {
+    return this.http.post<boolean>(this.apiUrl + "login", user);
+  }
+
+  register(user: User): Observable<boolean> {
+    return this.http.post<boolean>(this.apiUrl + "register", user);
+  }
+
+  getUsers(): Observable<User[]> {
+    return this.http.get<User[]>(this.apiUrl + "users?page=2");
+  }
+
+  getUser(id: number): Observable<User> {
+    return this.http.get<User>(this.apiUrl + `users/${id}`);
+  }
+
+  createUser(user: User): Observable<User> {
+    return this.http.post<User>(this.apiUrl + "users", user);
+  }
+
+  updateUser(id: number, user: User): Observable<User> {
+    return this.http.put<User>(this.apiUrl + `users/${id}`, user);
+  }
+
+  deleteUser(id: number): Observable<User> {
+    return this.http.delete<User>(this.apiUrl + `users/${id}`);
+  }
 }

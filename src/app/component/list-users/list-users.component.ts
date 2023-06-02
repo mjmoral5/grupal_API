@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { User } from 'src/app/model/user';
@@ -41,9 +42,16 @@ export class ListUsersComponent implements OnInit {
         u.last_name = json.data.last_name;
         alert("Se va a eliminar el usuario:" + u.first_name + " " + u.last_name);
       });
-    }
-    
-    );
+    },
+    (e : HttpErrorResponse) => {
+      if(e.error instanceof Error){
+        console.log("Ha ocurrido un error: " + e.error.message);
+      }else{
+        console.log("Código de error: " + `${e.status}`);
+      }
+      
+    });
   }
+
 
 }

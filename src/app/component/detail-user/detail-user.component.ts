@@ -11,16 +11,26 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class DetailUserComponent {
   
-  idUser?: number;
-  u? : User;
-
+  idUser?: number; //Identificador del usuario
+  u? : User;  //Un usuario
+  /**
+   * 
+   * @param userService Servicio de los usuarios para hacer uso de los métodos necesarios
+   * @param route Elemento de tipo ActivatedRoute para poder obtener los parámetros de la ruta
+   */
   constructor(userService : UserService, route : ActivatedRoute){
     this.idUser = Number(route.snapshot.paramMap.get('id'));
-    userService.getUser(2).subscribe(res =>{
+    userService.getUser(this.idUser).subscribe(res =>{
       this.u =  res;
       let json = JSON.parse(JSON.stringify(this.u));
       
-      this.u
+      //Set de los elementos obtenidos del JSON al usuario creado para su posterior uso
+      this.u.idUser = json.data.id;
+      this.u.email = json.data.email;
+      this.u.first_name = json.data.first_name;
+      this.u.last_name = json.data.last_name;
+      this.u.avatar = json.data.avatar;
+      
     },
     (e : HttpErrorResponse) => {
       if(e.error instanceof Error){

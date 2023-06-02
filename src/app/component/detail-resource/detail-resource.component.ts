@@ -15,7 +15,7 @@ export class DetailResourceComponent {
   constructor(resourceService : ResourceService, route : ActivatedRoute){
     
     this.id = Number(route.snapshot.paramMap.get('id'));
-    resourceService.getResourceDetail(2).subscribe(res =>{
+    resourceService.getResourceDetail(this.id).subscribe(res =>{
       this.r =  res;
       let json = JSON.parse(JSON.stringify(this.r));
       

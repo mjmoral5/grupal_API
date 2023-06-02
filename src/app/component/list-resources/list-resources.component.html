@@ -1,4 +1,6 @@
 <app-nav-bar></app-nav-bar>
+
+<!--Tabla inicial
 <div class="container my-4 my-xl-5">
   <div class="row text-center w-75 m-auto">
     <div class="col p-3 p-xl-5 fs-1 text-uppercase border bg-dark text-light">
@@ -35,4 +37,29 @@
       </a>
     </div>
   </div>
+</div>
+-->
+<!--tabla dinamica recursos-->
+<div class="p-5">
+    <div class="container">
+    
+      <div class="col-6">
+      <div class="row p-1 border">
+        <div class="col-8"><p>Recurso</p></div>
+        <div class="col-4 p-2 "><p>Ver</p></div>
+      </div>
+    </div>
+  <div class="col-6" *ngFor="let recurso of resources">
+    <a [routerLink]="['/resorce/', recurso.id]">
+      <div class="row p-1 border">
+        <div class="col-8"><p>{{recurso.name}}</p></div>
+        <div class="col-4 p-2 ">
+          <a [routerLink]="['/resource/', recurso.id]"  class="w-50 btn btn-secondary  align-items-center border border-dark">
+            <i class="bi bi-eye-fill btn-icons"></i>
+          </a>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
 </div>

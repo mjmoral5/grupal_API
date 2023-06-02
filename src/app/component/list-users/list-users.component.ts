@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { User } from 'src/app/model/user';
 import { UserService } from 'src/app/services/user.service';
 
@@ -9,8 +10,12 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class ListUsersComponent implements OnInit {
   usersList?: Array<User>;
-
-  constructor(private userService: UserService) { }
+  /**
+   * Constructor del componente ListUsersComponent
+   * @param userService Servicio de los usuarios para hacer uso de los diferentes métodos
+   * @param route Elemento de tipo ActivatedRoute para poder obtener los parámetros de la ruta
+   */
+  constructor(private userService: UserService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.userService.getUsers().subscribe(
@@ -22,4 +27,23 @@ export class ListUsersComponent implements OnInit {
       }
     );
   }
+  /**
+   * Método para borrar un usuario dado su id
+   */
+  delete() : void {
+    let idUser = Number(this.route.snapshot.paramMap.get('id'));
+    this.userService.deleteUser(idUser).subscribe(res =>{
+      this.userService.getUser(idUser).subscribe(res2 =>{
+        let u =  res2;
+        let json = JSON.parse(JSON.stringify(u));
+
+        u.first_name = json.data.first_name;
+        u.last_name = json.data.last_name;
+        alert("Se va a eliminar el usuario:" + u.first_name + " " + u.last_name);
+      });
+    }
+    
+    );
+  }
+
 }

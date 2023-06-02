@@ -6,17 +6,17 @@
    <form class="d-flex flex-column p-2 needs-validation" novalidate>
      <div class="w-50 mw-100  py-3 m-auto">
        <label for="validationCustom01" class="form-label fs-4">Email</label>
-       <input type="email" class=" form-control mb-1 p-2" id="validationCustom01" required placeholder="email@email.com">
+       <input type="email" class=" form-control mb-1 p-2" name="email" id="validationCustom01" required placeholder="email@email.com" [(ngModel)]="email">
      </div>
      <div class="w-50 mw-100  py-3 m-auto">
        <div class="mb-3">
          <label for="" class="form-label fs-4">Password</label>
-         <input type="password" class=" form-control mb-1 p-2" name="" id="" placeholder="Password1234">
+         <input type="password" class=" form-control mb-1 p-2" name="password" id="" placeholder="Password1234" [(ngModel)]="password">
        </div>
      </div>
    </form>
    <div class="row w-50 m-auto py-2">
-    <button class="btn btn-primary mb-3" [routerLink]="['/users']" type="submit">
+    <button class="btn btn-primary mb-3" [routerLink]="['/users']" type="submit" (click) = loginUser()>
       Create account
     </button>
    </div>

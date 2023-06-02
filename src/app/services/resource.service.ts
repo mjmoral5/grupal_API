@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 export class ResourceService {
 
   resources : Array<Resource> = [];
+  private apiURL = "https://reqres.in/api/";
   /**
    * Constructor del servicio Resource
    * @param http Objeto HttpClient para poder hacer las peticiones a la API
@@ -20,10 +21,15 @@ export class ResourceService {
    * @returns Un objeto Observable mapeado con Resource
    */
   getListResources() : Observable<Resource> {
+  
+  return this.http.get<Resource>(this.apiURL+"unknown");
+  
+  }
     
-    return this.http.get<Resource>("https://reqres.in/api/unknown");
-    
-    }
-    
+  getResourceDetail(id : number) : Observable<Resource> {
+    return this.http.get<Resource>(this.apiURL+"unknown/"+`${id}`);
+  }
+
+
   }
 

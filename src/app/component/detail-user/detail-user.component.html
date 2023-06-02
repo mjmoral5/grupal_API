@@ -1,14 +1,16 @@
+<app-nav-bar></app-nav-bar>
 <div class="container">
 
 
-    <div class="d-flex justify-content-center">
-        <app-nav-bar></app-nav-bar>
-
+    <div class="d-flex justify-content-center p-4">
+    
+        <a [routerLink]="['/users']" class="btn btn-primary "><i class="bi bi-arrow-left"></i>Volver</a>
+       
     </div>
 
-    <a [routerLink]="['/users']" class="btn btn-primary "><i class="bi bi-arrow-left"></i>Volver</a>
+ 
     <div class="d-flex justify-content-center">
-
+      
         <div class="card" style="width: 18rem;">
             <img src="https://reqres.in/img/faces/2-image.jpg" class="card-img-top" alt="...">
             <div class="card-body">

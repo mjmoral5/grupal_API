@@ -1,4 +1,4 @@
-<div class="m-auto w-75 mh-100 p-lg-5 p-3 border ">
+<div class="m-auto w-75 mh-100 p-lg-5 p-3 border mt-5">
  <div class="d-flex flex-column w-75 m-auto p-lg-5 p-3">
   <div class="row m-auto">
   <h1 class="h1">Log in</h1>
@@ -16,7 +16,9 @@
     </div>
   </form>
   <div class="row w-50 m-auto py-2">
-    <button class="btn btn-primary mb-3" type="submit">Login</button>
+    <button class="btn btn-primary mb-3"  [routerLink]="['/users']" type="submit">
+        Login
+    </button>
   </div>
   <div class="row w-25 fs-5 text-center m-auto py-2">
     <a class="text-decoration-none hover_link p-2 mb-3" [routerLink]="['/register']" rel="noopener noreferrer">Don't have an account?</a>

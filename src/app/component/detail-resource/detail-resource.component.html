@@ -1,29 +1,31 @@
-<div class="container">
+<div class="container-fluid">
 
-   
-    <div class="d-flex justify-content-center">
-        <app-nav-bar></app-nav-bar>
-       
+
+
+    <app-nav-bar></app-nav-bar>
+
+
+
+
+    <div class="d-flex justify-content-center p-4">
+        <a [routerLink]="['/resources']" class="btn btn-primary "><i class="bi bi-arrow-left"></i>Volver</a>
     </div>
-  
-    <a [routerLink]="['/resources']" class="btn btn-primary "><i></i>Volver</a>
+
     <div class="d-flex justify-content-center">
-     
         <div class="card" style="width: 18rem;">
-            <div class="muestra-color">
-                <div class="muestra-color" style="max-width: 18rem;">
-                    <div class="card-header">#000000</div>
-                   
+
+            <div class="contenedor-muestra" style="max-width: 18rem;">
+                <div class="card-header" >{{r?.color}}</div>
+
+                <div class="card-body">
+                    <h5 class="card-title">{{r?.name}}</h5>
+                    <p class="card-text">{{r?.year}}</p>
+                    <p class="card-text">{{r?.pantone_value}}</p>
+                    <p class="card-text"><a href="#">{{r?.color}}</a></p>
+                </div>
             </div>
-            <div class="card-body">
-              <h5 class="card-title">Nombre:</h5>
-              <p class="card-text">Año:</p>
-              <p class="card-text">Pantone:</p>
-              <p class="card-text"><a href="#">URL</a></p>
-            </div>
-          </div>
-        
-       
+
+
+        </div>
+
     </div>
-    
-</div>

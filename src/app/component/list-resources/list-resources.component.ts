@@ -24,6 +24,8 @@ export class ListResourcesComponent {
         this.resources.push(resultado);  //Voy creado objetos 'Resource' y los guardo en el array
       }
    })
+
+   console.log(this.resources);
   }
 
 }

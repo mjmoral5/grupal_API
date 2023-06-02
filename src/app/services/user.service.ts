@@ -12,11 +12,13 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  login(user: User): Observable<boolean> {
+  login(email: string, password: string): Observable<boolean> {
+    let user = { email: email, password: password };
     return this.http.post<boolean>(this.apiUrl + "login", user);
   }
 
-  register(user: User): Observable<boolean> {
+  register(email: string, password: string): Observable<boolean> {
+    let user = { email: email, password: password };
     return this.http.post<boolean>(this.apiUrl + "register", user);
   }
 

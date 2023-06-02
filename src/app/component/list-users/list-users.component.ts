@@ -9,7 +9,7 @@ import { UserService } from 'src/app/services/user.service';
   templateUrl: './list-users.component.html',
   styleUrls: ['./list-users.component.css']
 })
-export class ListUsersComponent implements OnInit {
+export class ListUsersComponent {
   usersList?: Array<User>;
   /**
    * Constructor del componente ListUsersComponent
@@ -22,6 +22,7 @@ export class ListUsersComponent implements OnInit {
     this.userService.getUsers().subscribe(
       (data) => {
         this.usersList = data;
+        console.log(this.usersList);
       },
       (error) => {
         console.log('Error:', error);

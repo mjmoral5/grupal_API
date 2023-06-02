@@ -9,7 +9,7 @@ import { EditUserComponent } from './component/edit-user/edit-user.component';
 import { RegisterComponent } from './component/register/register.component';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
+  { path: '', component: DetailUserComponent }, //LoginComponent
   { path: 'register', component: RegisterComponent },
   { path: 'resources', component: ListResourcesComponent },
   { path: 'resource/:id', component: DetailResourceComponent },
